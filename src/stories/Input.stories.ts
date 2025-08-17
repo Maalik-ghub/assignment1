@@ -75,3 +75,14 @@ export const Ghost: Story = {
         variant: 'ghost',
     },
 };
+
+export const Loading: Story = {
+    args: {
+        label: 'Username',
+        placeholder: 'Enter your username',
+        helperText: "The name shouldn't exceed 16 characters",
+        invalid: false,
+        disabled: false,
+        loading: true,
+    },
+}
