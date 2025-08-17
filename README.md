@@ -63,15 +63,9 @@ This project is a React component library featuring reusable UI components such 
 
 - **Build Storybook:**
   ```sh
-  npm run build-storybook
+  npm create storybook
   ```
   Builds the static Storybook site to the `storybook-static` directory.
-
-- **Run Tests:**
-  ```sh
-  npm test
-  ```
-  Runs all unit tests (if configured).
 
 ---
 
