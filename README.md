@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# Assignment 1 – React Component Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React component library featuring reusable UI components such as `Input` and `DataTable`, documented and tested with Storybook.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Component Documentation](#component-documentation)
+  - [Input](#input)
+  - [DataTable](#datatable)
+- [Storybook](#storybook)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Features
+
+- **Reusable React Components:** Includes `Input` and `DataTable` with customizable props.
+- **Storybook Integration:** Visual documentation and playground for all components.
+- **TypeScript Support:** Type-safe components and props.
+- **Autodocs:** Automatic documentation generation for all components.
+- **Ready for Deployment:** Build scripts for production-ready Storybook.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/) (v7 or higher recommended)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/Maalik-ghub/assignment1.git
+   cd assignment1
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+- **Start Storybook:**
+  ```sh
+  npm run storybook
+  ```
+  Runs Storybook in development mode at [http://localhost:6006](http://localhost:6006).
 
-### `npm start`
+- **Build Storybook:**
+  ```sh
+  npm run build-storybook
+  ```
+  Builds the static Storybook site to the `storybook-static` directory.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Run Tests:**
+  ```sh
+  npm test
+  ```
+  Runs all unit tests (if configured).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Component Documentation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Input
 
-### `npm run build`
+A customizable input component supporting variants, sizes, states, and more.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Props:**
+- `variant`: `'filled' | 'outlined' | 'ghost'`
+- `size`: `'sm' | 'md' | 'lg'`
+- `disabled`: `boolean`
+- `invalid`: `boolean`
+- `loading`: `boolean`
+- `placeholder`: `string`
+- `value`: `string`
+- `onChange`: `(e: React.ChangeEvent<HTMLInputElement>) => void`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Usage:**
+```tsx
+import { Input } from './src/stories/Input';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<Input
+  variant="outlined"
+  size="md"
+  placeholder="Enter text"
+  onChange={...}
+/>
+```
 
-### `npm run eject`
+### DataTable
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A flexible data table component for displaying tabular data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Props:**
+- `columns`: `Array<{ key: string; label: string }>`
+- `data`: `Array<Record<string, any>>`
+- `onRowClick?`: `(row: any) => void`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Usage:**
+```tsx
+import { DataTable } from './src/stories/DataTable';
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<DataTable
+  columns={[
+    { key: 'name', label: 'Name' },
+    { key: 'age', label: 'Age' },
+  ]}
+  data={[
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+  ]}
+/>
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Storybook
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Storybook is used for developing and documenting components.
 
-### Code Splitting
+- **Start Storybook:** `npm run storybook`
+- **Build Storybook:** `npm run build-storybook`
+- **Autodocs:** Docs are auto-generated from your stories files.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If tests are configured, run them with:
 
-### Making a Progressive Web App
+```sh
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+assignment1/
+├── src/
+│   └── stories/
+│       ├── Input.tsx
+│       ├── Input.stories.ts
+│       ├── DataTable.tsx
+│       ├── DataTable.stories.ts
+│       └── input.css
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contributing
 
-### `npm run build` fails to minify
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## License
+
+This project is licensed under
