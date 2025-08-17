@@ -65,7 +65,7 @@ This project is a React component library featuring reusable UI components such 
   ```sh
   npm create storybook
   ```
-  Builds the static Storybook site to the `storybook-static` directory.
+  Builds the static Storybook site.
 
 ---
 
