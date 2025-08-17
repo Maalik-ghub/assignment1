@@ -13,10 +13,7 @@ This project is a React component library featuring reusable UI components such 
   - [Input](#input)
   - [DataTable](#datatable)
 - [Storybook](#storybook)
-- [Testing](#testing)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
