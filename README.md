@@ -129,7 +129,7 @@ import { DataTable } from './src/stories/DataTable';
 Storybook is used for developing and documenting components.
 
 - **Start Storybook:** `npm run storybook`
-- **Build Storybook:** `npm run build-storybook`
+- **Build Storybook:** `npm create storybook`
 - **Autodocs:** Docs are auto-generated from your stories files.
 
 ---
